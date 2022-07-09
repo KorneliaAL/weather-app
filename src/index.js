@@ -39,7 +39,6 @@ function searchCity(city) {
   axios.get(apiUrl).then(displayWeather);
 }
 
-
 function showCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
@@ -50,3 +49,6 @@ function showCity(event) {
 
 let date = document.querySelector("#weather-date");
 date.innerHTML = formatDate();
+
+let searchNewCity = document.querySelector("#search-form");
+searchNewCity.addEventListener("submit", showCity);
