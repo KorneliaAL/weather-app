@@ -10,3 +10,9 @@ form {
   text-align: center;
   margin-top: 20px;
 }
+h5 {
+  font-size: 15px;
+}
+a {
+  text-decoration: none;
+}
