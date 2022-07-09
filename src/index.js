@@ -63,3 +63,8 @@ date.innerHTML = formatDate();
 
 let searchNewCity = document.querySelector("#search-form");
 searchNewCity.addEventListener("submit", showCity);
+
+let currentLocation = document.querySelector("#current-button");
+currentLocation.addEventListener("click", getCurrentLocation);
+
+searchCity("New York");
