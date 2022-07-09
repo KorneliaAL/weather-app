@@ -87,3 +87,9 @@ a {
 .search-button:hover {
   background-color: #67a1d0;
 }
+.source-code {
+  font-size: 10px;
+}
+.coder-name {
+  opacity: 0.7;
+}
