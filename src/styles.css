@@ -16,3 +16,74 @@ h5 {
 a {
   text-decoration: none;
 }
+.current-city {
+  font-size: 80px;
+  font-weight: 100;
+  text-align: center;
+  margin-bottom: 1px;
+  padding-bottom: 1px;
+}
+.current-temeprature {
+  font-size: 30px;
+  font-weight: 200;
+  text-align: center;
+}
+.current-weather {
+  color: #fff;
+}
+.weatherPrediction {
+  color: #fff;
+}
+.card-all {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  background: linear-gradient(to right, #243949 0%, #517fa4 100%);
+  max-width: 420px;
+}
+.weather-prediction {
+  background-color: transparent;
+}
+.card-text {
+  font-size: 10px;
+  opacity: 0.7;
+}
+.emoji-current-temp {
+  font-size: 60px;
+  text-align: center;
+  padding-top: 0;
+}
+.weather-date {
+  text-align: center;
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: 100;
+  color: #fff;
+}
+.weather-wind {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 150;
+  color: #fff;
+}
+.search-bar {
+  color: #000;
+  font-weight: 200;
+}
+.search-button,
+.search-bar {
+  border-color: none;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.search-button {
+  background-color: #253b4a;
+  transition: all 200ms ease-in-out;
+  color: #fff;
+  opacity: 0.8;
+  font-weight: 100;
+}
+.search-button:hover {
+  background-color: #67a1d0;
+}
