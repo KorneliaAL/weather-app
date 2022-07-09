@@ -38,7 +38,18 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(displayWeather);
 }
-
+function searchCurrentLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "05aff18b41fdd75e383a4a70b93dcde4";
+  let units = "metric";
+  let apiWeb = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  axios.get(apiWeb).then(displayWeather);
+}
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
 function showCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
