@@ -6,3 +6,7 @@ h1 {
   color: #16242e;
   opacity: 0.5;
 }
+form {
+  text-align: center;
+  margin-top: 20px;
+}
