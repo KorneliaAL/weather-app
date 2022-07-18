@@ -5,6 +5,7 @@ h1 {
   text-align: center;
   color: #16242e;
   opacity: 0.5;
+  margin-bottom: 20px;
 }
 form {
   text-align: center;
@@ -15,12 +16,21 @@ h5 {
 }
 a {
   text-decoration: none;
+  color: #0f51b1;
+  font-weight: 100;
+}
+a:hover {
+  color: #0f3f86;
+}
+body {
+  font-family: "Montserrat", sans-serif;
 }
 .current-city {
-  font-size: 80px;
+  font-size: 70px;
   font-weight: 100;
   text-align: center;
   margin-bottom: 1px;
+  margin-top: 40px;
   padding-bottom: 1px;
 }
 .current-temeprature {
@@ -28,17 +38,15 @@ a {
   font-weight: 200;
   text-align: center;
 }
-.current-weather {
-  color: #fff;
-}
+.current-weather,
 .weatherPrediction {
   color: #fff;
 }
 .card-all {
-  margin-top: 20px;
+  margin: 0 auto;
   padding-bottom: 20px;
-  background: linear-gradient(to right, #243949 0%, #517fa4 100%);
-  max-width: 420px;
+  background: linear-gradient(to right, #365671 12%, #619bca 100%);
+  max-width: 500px;
 }
 .weather-prediction {
   background-color: transparent;
@@ -52,19 +60,17 @@ a {
   text-align: center;
   padding-top: 0;
 }
-.weather-date {
+.weather-date,
+.weather {
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
   opacity: 0.7;
   font-weight: 100;
   color: #fff;
 }
 .weather {
-  text-align: center;
-  font-size: 15px;
-  font-weight: 150;
-  color: #fff;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 .search-bar {
   color: #000;
