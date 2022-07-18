@@ -25,6 +25,12 @@ a:hover {
 body {
   font-family: "Montserrat", sans-serif;
 }
+img {
+  font-size: 60px;
+  margin: 0 auto;
+  padding-top: 0;
+  display: block;
+}
 .current-city {
   font-size: 70px;
   font-weight: 100;

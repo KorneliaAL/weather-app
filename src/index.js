@@ -23,12 +23,17 @@ function formatDate(time) {
   return fullDate;
 }
 function displayWeather(response) {
+  let icon = document.querySelector("#current-icon");
   celsiusTemp = Math.round(response.data.main.temp);
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-temp").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
+  );
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
 function searchCity(city) {
