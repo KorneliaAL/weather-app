@@ -59,11 +59,12 @@ a {
   font-weight: 100;
   color: #fff;
 }
-.weather-wind {
+.weather {
   text-align: center;
   font-size: 15px;
   font-weight: 150;
   color: #fff;
+  margin-bottom: 10px;
 }
 .search-bar {
   color: #000;
@@ -92,4 +93,11 @@ a {
 }
 .coder-name {
   opacity: 0.7;
+}
+
+.current-temeprature .active {
+  color: #fff;
+}
+.active:hover {
+  cursor: default;
 }
