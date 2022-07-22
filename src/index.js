@@ -22,6 +22,43 @@ function formatDate(time) {
   let fullDate = `${day} ${clock}`;
   return fullDate;
 }
+function formatDay(timestamp) {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return days[day];
+}
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-sm text-center">
+                <div class="weather-prediction">
+                  <h5 class="card-title monday">${formatDay(forecastDay.dt)}
+                  </h5>
+                  <div class="emoji"><img src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png" alt="#" class="forecast-icon" id="forecast-icon" /></div>
+                  <p class="card-text">${Math.round(
+                    forecastDay.temp.max
+                  )}℃/${Math.round(forecastDay.temp.min)}℃</p>
+                </div>
+              </div>`;
+    }
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let apiKey = "05aff18b41fdd75e383a4a70b93dcde4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 function displayWeather(response) {
   let icon = document.querySelector("#current-icon");
   celsiusTemp = Math.round(response.data.main.temp);
@@ -35,7 +72,7 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  displayForecast();
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "70f46e7b374a41958649bba5f746057f";
@@ -78,24 +115,7 @@ function changeToCelsius(event) {
   fahrenheit.classList.remove("active");
   celsius.classList.add("active");
 }
-function displayForecast(day) {
-  forecastElement = document.querySelector("#forecast");
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-sm text-center">
-                <div class="weather-prediction">
-                  <h5 class="card-title monday">${day}</h5>
-                  <div class="emoji">☀️</div>
-                  <p class="card-text">21℃/10℃</p>
-                </div>
-              </div>`;
-  });
 
-  forecastElement.innerHTML = forecastHTML;
-}
 let celsiusTemp = null;
 
 let date = document.querySelector("#weather-date");

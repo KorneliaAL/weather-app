@@ -113,3 +113,6 @@ img {
 .active:hover {
   cursor: default;
 }
+.forecast-icon {
+  width: 20px;
+}
