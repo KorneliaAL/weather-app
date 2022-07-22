@@ -35,6 +35,7 @@ function displayWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  displayForecast();
 }
 function searchCity(city) {
   let apiKey = "70f46e7b374a41958649bba5f746057f";
@@ -77,7 +78,24 @@ function changeToCelsius(event) {
   fahrenheit.classList.remove("active");
   celsius.classList.add("active");
 }
+function displayForecast(day) {
+  forecastElement = document.querySelector("#forecast");
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-sm text-center">
+                <div class="weather-prediction">
+                  <h5 class="card-title monday">${day}</h5>
+                  <div class="emoji">☀️</div>
+                  <p class="card-text">21℃/10℃</p>
+                </div>
+              </div>`;
+  });
 
+  forecastElement.innerHTML = forecastHTML;
+}
 let celsiusTemp = null;
 
 let date = document.querySelector("#weather-date");
