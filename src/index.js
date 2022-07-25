@@ -53,9 +53,9 @@ function displayForecast(response) {
                   }@2x.png" alt="#" class="forecast-icon" id="forecast-icon" /></div>
                   <p class="card-text forecast-temp">${Math.round(
                     forecastDay.temp.max
-                  )}℃/<span class="temp-min">${Math.round(
+                  )}ᴼ  <span class="temp-min">${Math.round(
           forecastDay.temp.min
-        )}℃</span></p>
+        )}ᴼ</span></p>
                 </div>
               </div>`;
     }
