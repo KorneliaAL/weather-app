@@ -14,14 +14,7 @@ form {
 h5 {
   font-size: 15px;
 }
-a {
-  text-decoration: none;
-  color: #0f51b1;
-  font-weight: 100;
-}
-a:hover {
-  color: #0f3f86;
-}
+
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -32,7 +25,7 @@ img {
   display: block;
 }
 .current-city {
-  font-size: 70px;
+  font-size: 65px;
   font-weight: 100;
   text-align: center;
   margin-bottom: 1px;
@@ -41,7 +34,7 @@ img {
 }
 .current-temeprature {
   font-size: 30px;
-  font-weight: 200;
+  font-weight: 100;
   text-align: center;
 }
 .current-weather,
@@ -50,6 +43,7 @@ img {
 }
 .card-all {
   margin: 0 auto;
+  margin-top: 25px;
   padding-bottom: 20px;
   background: linear-gradient(to right, #365671 12%, #619bca 100%);
   max-width: 500px;
@@ -57,8 +51,10 @@ img {
 .weather-prediction {
   background-color: transparent;
 }
-.card-text {
+.forecast-temp {
   font-size: 10px;
+}
+.temp-min {
   opacity: 0.7;
 }
 .emoji-current-temp {
@@ -106,13 +102,12 @@ img {
 .coder-name {
   opacity: 0.7;
 }
-
-.current-temeprature .active {
-  color: #fff;
-}
-.active:hover {
-  cursor: default;
-}
 .forecast-icon {
   width: 20px;
+}
+.celsius {
+  position: relative;
+  font-size: 15px;
+  bottom: 10px;
+  left: -4px;
 }
