@@ -44,9 +44,11 @@ function displayForecast(response) {
                   <div class="emoji"><img src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
                   }@2x.png" alt="#" class="forecast-icon" id="forecast-icon" /></div>
-                  <p class="card-text">${Math.round(
+                  <p class="card-text forecast-temp">${Math.round(
                     forecastDay.temp.max
-                  )}℃/${Math.round(forecastDay.temp.min)}℃</p>
+                  )}℃/<span class="temp-min">${Math.round(
+          forecastDay.temp.min
+        )}℃</span></p>
                 </div>
               </div>`;
     }
@@ -62,7 +64,9 @@ function getForecast(coordinates) {
 function displayWeather(response) {
   let icon = document.querySelector("#current-icon");
   celsiusTemp = Math.round(response.data.main.temp);
-  document.querySelector("#current-city").innerHTML = response.data.name;
+  document.querySelector(
+    "#current-city"
+  ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   document.querySelector("#current-temp").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind-speed").innerHTML = Math.round(
@@ -99,24 +103,6 @@ function showCity(event) {
   currentCity.innerHTML = `${city}`;
   searchCity(city);
 }
-function changeToFahrenheit(event) {
-  event.preventDefault;
-  let tempElement = document.querySelector("#current-temp");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahrenheitTemp);
-  fahrenheit.classList.add("active");
-  celsius.classList.remove("active");
-}
-
-function changeToCelsius(event) {
-  event.preventDefault;
-  let tempElement = document.querySelector("#current-temp");
-  tempElement.innerHTML = celsiusTemp;
-  fahrenheit.classList.remove("active");
-  celsius.classList.add("active");
-}
-
-let celsiusTemp = null;
 
 let date = document.querySelector("#weather-date");
 date.innerHTML = formatDate();
@@ -127,10 +113,4 @@ searchNewCity.addEventListener("submit", showCity);
 let currentLocation = document.querySelector("#current-button");
 currentLocation.addEventListener("click", getCurrentLocation);
 
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", changeToFahrenheit);
-
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", changeToCelsius);
-
-searchCity("New York");
+searchCity("Oslo");
