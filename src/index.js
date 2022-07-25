@@ -8,18 +8,25 @@ function formatDate(time) {
     "Friday",
     "Saturday",
   ];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
   let nowDate = new Date();
   let day = days[nowDate.getDay()];
-  let hour = nowDate.getHours();
-  if (hour < 10) {
-    hour = `0${hour}`;
-  }
-  let minute = nowDate.getMinutes();
-  if (minute < 10) {
-    minute = `0${minute}`;
-  }
-  let clock = `${hour}:${minute}`;
-  let fullDate = `${day} ${clock}`;
+  let month = months[nowDate.getMonth()];
+  let currentDate = nowDate.getDate();
+  let fullDate = `${day} ${month} ${currentDate}`;
   return fullDate;
 }
 function formatDay(timestamp) {
