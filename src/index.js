@@ -46,7 +46,9 @@ function displayForecast(response) {
         forecastHTML +
         `<div class="col-sm text-center">
                 <div class="weather-prediction">
-                  <h5 class="card-title monday">${formatDay(forecastDay.dt)}
+                  <h5 class="card-title forecast-day">${formatDay(
+                    forecastDay.dt
+                  )}
                   </h5>
                   <div class="emoji"><img src="http://openweathermap.org/img/wn/${
                     forecastDay.weather[0].icon
