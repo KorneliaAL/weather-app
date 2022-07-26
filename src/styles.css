@@ -24,6 +24,10 @@ img {
   padding-top: 0;
   display: block;
 }
+small {
+  font-size: 10px;
+  margin-top: 0;
+}
 .current-city {
   font-size: 65px;
   font-weight: 100;
@@ -44,7 +48,7 @@ img {
 .card-all {
   margin: 0 auto;
   margin-top: 25px;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
   padding-bottom: 20px;
   background: linear-gradient(to right, #365671 12%, #619bca 100%);
   max-width: 500px;
@@ -116,4 +120,8 @@ img {
   font-size: 20px;
   bottom: 20px;
   left: -10px;
+}
+.wrapper {
+  max-width: 500px;
+  margin: 20px auto;
 }

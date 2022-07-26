@@ -22,46 +22,54 @@
   </head>
   <body>
     <div class="container">
-      <div class="card card-all">
-        <div class="card-body">
-          <h1>Vanilla Weather</h1>
-          <div class="row">
-            <form action="" class="search-form" id="search-form">
-              <input
-                type="text"
-                placeholder="Change city..."
-                class="search-bar"
-                id="city-input"
-                autofocus="on"
-                autocomplete="off"
-              />
-              <input type="submit" value="Search" class="search-button" />
-              <input
-                type="submit"
-                value="Your location📍"
-                class="search-button"
-                id="current-button"
-              />
-            </form>
-          </div>
-          <section class="current-weather">
-            <div class="city-temp current-city" id="current-city"></div>
-            <img src="#" alt="#" id="current-icon" />
-            <div class="current-temeprature float-left">
-              <span class="current-temp" id="current-temp"></span>
-              <span href="#" class="celsius active">℃</span>
+      <div class="wrapper">
+        <div class="card card-all">
+          <div class="card-body">
+            <h1>Vanilla Weather</h1>
+            <div class="row">
+              <form action="" class="search-form" id="search-form">
+                <input
+                  type="text"
+                  placeholder="Change city..."
+                  class="search-bar"
+                  id="city-input"
+                  autofocus="on"
+                  autocomplete="off"
+                />
+                <input type="submit" value="Search" class="search-button" />
+                <input
+                  type="submit"
+                  value="Your location📍"
+                  class="search-button"
+                  id="current-button"
+                />
+              </form>
             </div>
-          </section>
-          <p class="weather-date" id="weather-date"></p>
-          <div class="weather">
-            Wind
-            <span id="wind-speed"></span>
-            m/s | Humidity
-            <span id="humidity"></span>
-            %
+            <section class="current-weather">
+              <div class="city-temp current-city" id="current-city"></div>
+              <img src="#" alt="#" id="current-icon" />
+              <div class="current-temeprature float-left">
+                <span class="current-temp" id="current-temp"></span>
+                <span href="#" class="celsius active">℃</span>
+              </div>
+            </section>
+            <p class="weather-date" id="weather-date"></p>
+            <div class="weather">
+              Wind
+              <span id="wind-speed"></span>
+              m/s | Humidity
+              <span id="humidity"></span>
+              %
+            </div>
+            <div class="weatherPrediction" id="forecast"></div>
           </div>
-          <div class="weatherPrediction" id="forecast"></div>
         </div>
+        <small
+          ><a href="https://github.com/KorneliaAL/weather-app" target="_blank"
+            >Open-source code</a
+          >
+          by Kornelia Arnet Lyberg</small
+        >
       </div>
     </div>
 
